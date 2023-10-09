@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 100px;
+
+}
+
+nav {
+    grid-area: nav;
+    background-color: #333333;
+    display: grid;
+    grid-template-areas:
+        "logo nav-box-1 nav-box-1"
+        "nav-box-1 nav-box-1 nav-box-1";
+    cursor: pointer;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+main {
+    grid-area: main;
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333333;
+
+}
+
+/* nav */
+
+nav .nav-box-1 {
+    font-size: 22px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .nav-box-1:hover {
+    transform: scale(1.5);
+    transition: 0.3s;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo img {
+    width: 70px;
+}
+
+nav .nav-box-1 .tienda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .nav-box-1 .tienda p {
+    font-size: 8px;
+    color: white;
+}
+
+nav .nav-box-1 a i {
+    font-size: 35px;
+}
+
+nav .nav-box-1 a i:hover {
+    transition: all 0.3s;
+}
+
+nav .nav-box-1 a {
+    text-decoration: none;
+    color: white;
+}
+
+nav .nav-box-1 a:hover {
+    color: yellow;
+}
+/* nav */
+
+/* footer */
+footer .redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .redes i {
+    font-size: 30px;
+    padding: 10px;
+}
+
+footer .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+footer .texto h2 {
+    color: white;
+}
+
+footer .texto p {
+    color: white;
+}
+/* fin footer */
+
+/* modo movil */
+main .imagenes {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 1rem;
+}
+main .imagenes img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+main .imagenes img:hover{
+    transform: scale(1.1);
+}
+
+/* modo movil */
+
+/* modo tablet */
+@media (min-width:576px) {
+
+    main .imagenes{
+        grid-template-columns: repeat(3,1fr);
+
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    footer{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+/* modo escritorio */
+
+@media (min-width:992px) {
+    main{
+        margin-left: 12%;
+    }
+
+    main .imagenes{
+        grid-template-columns: repeat(5,1fr);
+    }
+    
+    nav{
+        position: fixed;
+         height: 100%;
+         width: 12%;
+         display: flex;
+         flex-direction: column;
+    }
+    nav .logo img{
+        width: 150px;
+    }
+    nav .nav-box-1{
+        padding: 25px;
+    }
+
+}
