@@ -11,7 +11,7 @@
         "nav"
         "main"
         "footer";
-    grid-template-rows: auto auto 100px;
+    grid-template-rows: auto auto auto;
 
 }
 
@@ -34,7 +34,10 @@ main {
 footer {
     grid-area: footer;
     background-color: #333333;
-
+}
+footer .texto a{
+    text-decoration: none;
+    color: snow;
 }
 
 /* nav */
@@ -112,7 +115,7 @@ footer .texto {
     text-align: center;
 }
 
-footer .texto h2 {
+footer .texto h1 {
     color: white;
 }
 
@@ -138,15 +141,29 @@ main .imagenes img:hover{
     transform: scale(1.1);
     filter: blur(0) grayscale(0);
 }
+.whatsapp{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 60px;
+}
+
 
 /* modo movil */
 
 /* modo tablet */
 @media (min-width:576px) {
 
-    main .imagenes{
-        grid-template-columns: repeat(3,1fr);
+    main{
+        margin-top: 130px;
 
+    }
+
+    main .imagenes{
+        grid-template-columns: repeat(2,1fr);
     }
 
     nav{
@@ -162,6 +179,16 @@ main .imagenes img:hover{
         width: 100%;
         z-index: 1;
     }
+    .whatsapp{
+        display: none;
+    }
+}
+
+@media (min-width:768px) {
+
+    main .imagenes{
+        grid-template-columns: repeat(3,1fr);
+    }
 }
 
 /* modo escritorio */
@@ -169,6 +196,7 @@ main .imagenes img:hover{
 @media (min-width:992px) {
     main{
         margin-left: 13%;
+        margin-top: 0;
     }
 
     main .imagenes{
@@ -187,6 +215,9 @@ main .imagenes img:hover{
     }
     nav .nav-box-1{
         padding: 25px;
+    }
+    .whatsapp{
+        display: none;
     }
 
 }
