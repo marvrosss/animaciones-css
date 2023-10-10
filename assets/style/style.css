@@ -131,10 +131,12 @@ main .imagenes img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: filter 0.3s, transform 0.3s;
+    filter: blur(1px) grayscale(70%);
 }
 main .imagenes img:hover{
     transform: scale(1.1);
+    filter: blur(0) grayscale(0);
 }
 
 /* modo movil */
@@ -166,7 +168,7 @@ main .imagenes img:hover{
 
 @media (min-width:992px) {
     main{
-        margin-left: 12%;
+        margin-left: 13%;
     }
 
     main .imagenes{
